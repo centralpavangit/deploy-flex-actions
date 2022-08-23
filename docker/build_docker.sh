@@ -2,11 +2,12 @@
 
 echo "Build the docker"
 
-docker build . -t rkrispin/flex_dash_env:dev.0.0.0.9000
+docker build . -t flex_dash_env:889
 
 if [[ $? = 0 ]] ; then
 echo "Pushing docker..."
-docker push rkrispin/flex_dash_env:dev.0.0.0.9000
+docker tag flex_dash_env:889 pavandocker143/datta
+docker push pavandocker143/datta
 else
 echo "Docker build failed"
 fi
